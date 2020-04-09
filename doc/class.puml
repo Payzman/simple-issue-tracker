@@ -1,0 +1,16 @@
+@startuml
+package command {
+  interface ICommand {
+    +~ICommand()
+  }
+}
+
+package input {
+  interface IInput {
+    +~IInput()
+    +std::unique_ptr<ICommand> getCommand()
+  }
+}
+
+IInput --> ICommand : creates
+@enduml
