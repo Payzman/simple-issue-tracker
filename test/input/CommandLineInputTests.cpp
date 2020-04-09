@@ -3,35 +3,7 @@
 #include "command/ICommand.hpp"
 #include "command/NullCommand.hpp"
 #include "input/IInput.hpp"
-#include "input/cli/CommandLineArgument.hpp"
-
-/**
- * Input implementation for command line inputs. Uses the command line arguments
- * to determine the appropiate command.
- */
-class CommandLineInput : public IInput {
-public:
-  /** Constructor. */
-  CommandLineInput(std::vector<std::string> arguments);
-  std::unique_ptr<ICommand> getCommand();
-
-private:
-  static const CommandLineArgument CREATE;
-  CommandLineArgument _argument;
-};
-
-const CommandLineArgument CommandLineInput::CREATE =
-    CommandLineArgument("new-db");
-
-CommandLineInput::CommandLineInput(std::vector<std::string> arguments)
-    : _argument(arguments.front()) {}
-
-std::unique_ptr<ICommand> CommandLineInput::getCommand() {
-  if (_argument == CREATE) {
-    return std::make_unique<CreateDatabaseCommand>();
-  }
-  return std::make_unique<NullCommand>();
-}
+#include "input/cli/CommandLineInput.hpp"
 
 SCENARIO("Testing command line arguments.") {
   GIVEN("A command line input, that a new database should be created.") {

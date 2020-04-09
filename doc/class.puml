@@ -18,6 +18,13 @@ package input {
       +<<friend>> bool operator==(...)
       -std::string _argument
     }
+    class CommandLineInput implements IInput {
+      +CommandLineInput(std::vector<std::string> arguments)
+      +std::unique_ptr<ICommand> getCommand()
+      -{static} const CommandLineArgument CREATE;
+      -CommandLineArgument _argument;
+    }
+    CommandLineInput o-- CommandLineArgument
   }
 }
 
