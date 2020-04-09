@@ -1,43 +1,7 @@
 #include "catch.hpp"
 #include "command/ICommand.hpp"
 #include "input/IInput.hpp"
-
-/**
- * Defines a specific command line argument.
- */
-class CommandLineArgument {
-public:
-  /** Constructor. */
-  CommandLineArgument(std::string argument);
-  /** Equality check... */
-  friend bool operator==(const CommandLineArgument &lhs,
-                         const CommandLineArgument &rhs);
-
-private:
-  std::string _argument;
-};
-
-CommandLineArgument::CommandLineArgument(std::string argument)
-    : _argument(argument) {}
-
-bool operator==(const CommandLineArgument &lhs,
-                const CommandLineArgument &rhs) {
-  return lhs._argument == rhs._argument;
-}
-
-SCENARIO("Test equality operator ==") {
-  GIVEN("CommandLineArgument new-db") {
-    CommandLineArgument lhs = CommandLineArgument("new-db");
-    WHEN("Comparing to command line argument new-db") {
-      CommandLineArgument rhs = CommandLineArgument("new-db");
-      THEN("They should be equal.") { REQUIRE(lhs == rhs); }
-    }
-    WHEN("Comparing to command line argument yeet") {
-      CommandLineArgument rhs = CommandLineArgument("yeet");
-      THEN("They should not be equal") { REQUIRE_FALSE(lhs == rhs); }
-    }
-  }
-}
+#include "input/cli/CommandLineArgument.hpp"
 
 /**
  * Denotes a command that does nothing. Can be used for input errors for

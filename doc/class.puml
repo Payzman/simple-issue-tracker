@@ -10,6 +10,13 @@ package input {
     +~IInput()
     +std::unique_ptr<ICommand> getCommand()
   }
+  package cli {
+    class CommandLineArgument {
+      +CommandLineArgument(std::string argument)
+      +<<friend>> bool operator==(...)
+      -std::string _argument
+    }
+  }
 }
 
 IInput --> ICommand : creates
