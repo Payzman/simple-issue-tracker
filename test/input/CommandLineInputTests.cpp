@@ -1,10 +1,9 @@
 #include "catch.hpp"
+#include "command/CreateDatabaseCommand.hpp"
 #include "command/ICommand.hpp"
 #include "command/NullCommand.hpp"
 #include "input/IInput.hpp"
 #include "input/cli/CommandLineArgument.hpp"
-
-class CreateDatabaseCommand : public ICommand {};
 
 /**
  * Input implementation for command line inputs. Uses the command line arguments

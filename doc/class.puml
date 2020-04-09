@@ -4,6 +4,7 @@ package command {
     +~ICommand()
   }
   class NullCommand implements ICommand
+  class CreateDatabaseCommand implements ICommand
 }
 
 package input {
