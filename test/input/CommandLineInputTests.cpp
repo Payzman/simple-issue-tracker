@@ -1,15 +1,5 @@
-#include "../../inc/catch.hpp"
-#include <iostream>
-#include <typeinfo>
-
-/**
- * Interface for any type of command that can be run on the issue tracker.
- */
-class ICommand {
-public:
-  /** Destructor. */
-  virtual ~ICommand() = 0;
-};
+#include "catch.hpp"
+#include "command/ICommand.hpp"
 
 ICommand::~ICommand(){};
 

@@ -5,6 +5,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 
 project("Simple Issue Tracker")
 
+include_directories("inc")
 add_subdirectory(inc)
 add_subdirectory(src)
 add_subdirectory(test)
