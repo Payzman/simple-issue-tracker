@@ -1,4 +1,5 @@
 file(GLOB_RECURSE test_sources ./*.cpp)
 add_executable(Test ${test_sources})
-target_compile_options(issue-tracker PRIVATE -Wall -Wextra)
+target_compile_options(Test PRIVATE -Wall -Wextra)
+set_target_properties(Test PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 target_link_libraries(Test issuetrackerlib)
