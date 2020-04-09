@@ -1,8 +1,6 @@
 #include "catch.hpp"
 #include "command/ICommand.hpp"
 
-ICommand::~ICommand(){};
-
 /**
  * Interface for any input, i.e. command line / graphical user interface ...
  */
