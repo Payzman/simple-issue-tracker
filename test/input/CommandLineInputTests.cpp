@@ -1,13 +1,9 @@
 #include "catch.hpp"
 #include "command/ICommand.hpp"
+#include "command/NullCommand.hpp"
 #include "input/IInput.hpp"
 #include "input/cli/CommandLineArgument.hpp"
 
-/**
- * Denotes a command that does nothing. Can be used for input errors for
- * example.
- */
-class NullCommand : public ICommand {};
 class CreateDatabaseCommand : public ICommand {};
 
 /**
