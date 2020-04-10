@@ -8,6 +8,8 @@ class ICommand {
 public:
   /** Destructor. */
   virtual ~ICommand() = 0;
+  /** Runs the command implementation. */
+  virtual void run() = 0;
 };
 
 #endif
